@@ -1,5 +1,5 @@
 # This workflow runs the pipeline with the minimal test dataset to check that it completes without any syntax errors
-name: nf-core CI
+name: originsciences CI
 on:
   push:
     branches:
@@ -30,7 +30,7 @@ concurrency:
 jobs:
   test:
     name: "aligner: ${{ matrix.profile }} ; NF: ${{ matrix.NXF_VER }}"
-    if: "${{ github.event_name != 'push' || (github.event_name == 'push' && github.repository == 'nf-core/scrnaseq') }}"
+    if: "${{ github.event_name != 'push' || (github.event_name == 'push' && github.repository == 'originsciences/scrnaseq') }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
