@@ -1,11 +1,10 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/scrnaseq
+    originsciences/scrnaseq
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/scrnaseq
-    Website: https://nf-co.re/scrnaseq
-    Slack  : https://nfcore.slack.com/channels/scrnaseq
+    Github : https://github.com/originsciences/scrnaseq
+
 ----------------------------------------------------------------------------------------
 */
 
@@ -45,7 +44,7 @@ params.cellranger_index = params.aligner == 'cellrangerarc' ?
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow NFCORE_SCRNASEQ {
+workflow ORIGIN_SCRNASEQ {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -85,7 +84,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_SCRNASEQ (
+    ORIGIN_SCRNASEQ (
         PIPELINE_INITIALISATION.out.samplesheet,
     )
     //
@@ -98,7 +97,7 @@ workflow {
         params.outdir,
         params.monochrome_logs,
         params.hook_url,
-        NFCORE_SCRNASEQ.out.multiqc_report
+        ORIGIN_SCRNASEQ.out.multiqc_report
     )
 }
 
