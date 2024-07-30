@@ -8,8 +8,8 @@ process CELLRANGER_MULTI {
     val meta
     tuple val(meta_gex)        , path (gex_fastqs   , stageAs: "fastqs/gex/fastq_???/*")
     tuple val(meta_vdj)        , path (vdj_fastqs   , stageAs: "fastqs/vdj/fastq_???/*")
-    tuple val(meta_vdjb)      , path (vdjb_fastqs , stageAs: "fastqs/vdjb/fastq_???/*")
-    tuple val(meta_vdjt)      , path (vdjt_fastqs , stageAs: "fastqs/vdjt/fastq_???/*")
+    tuple val(meta_vdjb)       , path (vdjb_fastqs  , stageAs: "fastqs/vdjb/fastq_???/*")
+    tuple val(meta_vdjt)       , path (vdjt_fastqs  , stageAs: "fastqs/vdjt/fastq_???/*")
     tuple val(meta_ab)         , path (ab_fastqs    , stageAs: "fastqs/ab/fastq_???/*")
     tuple val(meta_beam)       , path (beam_fastqs  , stageAs: "fastqs/beam/fastq_???/*")
     tuple val(meta_cmo)        , path (cmo_fastqs   , stageAs: "fastqs/cmo/fastq_???/*")
