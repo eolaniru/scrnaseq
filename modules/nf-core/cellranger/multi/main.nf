@@ -68,7 +68,7 @@ process CELLRANGER_MULTI {
 
     gex_reference_path = include_gex ? "reference,./${gex_reference_name}" : ''
     fb_reference_path  = include_fb  ? "reference,./${fb_reference_name}"  : ''
-    vdj_reference_path = include_vdj || include_vdj_b || include_vdj_t ? "reference,./${vdj_reference_name}" : ''
+    vdj_reference_path = include_vdj || include_vdjb || include_vdjt ? "reference,./${vdj_reference_name}" : ''
 
     // targeted GEX panel goes under GEX section, not its own
     target_panel = gex_targetpanel_name != '' ? "target-panel,./$gex_targetpanel_name" : ''
