@@ -257,6 +257,8 @@ workflow SCRNASEQ {
             // either empty or populated. It will be branched inside the subworkflow.
             if (!map_collection_clone.any{ it.feature_type == 'gex' })    { map_collection_clone.add( [id: sample_id, feature_type: 'gex'   , gex:    empty_file, options:[:] ] ) }
             if (!map_collection_clone.any{ it.feature_type == 'vdj' })    { map_collection_clone.add( [id: sample_id, feature_type: 'vdj'   , vdj:    empty_file, options:[:] ] ) }
+            if (!map_collection_clone.any{ it.feature_type == 'vdj-b' })  { map_collection_clone.add( [id: sample_id, feature_type: 'vdj-b' , vdj-b:  empty_file, options:[:] ] ) }
+            if (!map_collection_clone.any{ it.feature_type == 'vdj-t' })  { map_collection_clone.add( [id: sample_id, feature_type: 'vdj-t' , vdj-t:  empty_file, options:[:] ] ) }
             if (!map_collection_clone.any{ it.feature_type == 'ab' })     { map_collection_clone.add( [id: sample_id, feature_type: 'ab'    , ab:     empty_file, options:[:] ] ) }
             if (!map_collection_clone.any{ it.feature_type == 'beam' })   { map_collection_clone.add( [id: sample_id, feature_type: 'beam'  , beam:   empty_file, options:[:] ] ) } // currently not implemented, the input samplesheet checking will not allow it.
             if (!map_collection_clone.any{ it.feature_type == 'crispr' }) { map_collection_clone.add( [id: sample_id, feature_type: 'crispr', crispr: empty_file, options:[:] ] ) }
