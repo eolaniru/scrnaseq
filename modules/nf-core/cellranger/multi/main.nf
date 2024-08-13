@@ -1,6 +1,6 @@
 process CELLRANGER_MULTI {
     tag "$meta.id"
-    label 'process_high'
+    label 'process_very_high'
 
     container "nf-core/cellranger:8.0.0"
 
