@@ -47,7 +47,11 @@ workflow CELLRANGER_MULTI_ALIGN {
                 vdjt: meta.feature_type == "vdjt"
                     return [ meta, fastq ]
                 ab: meta.feature_type == "ab"
-                    return [ meta, fastq ]
+                    if (params.fb_reference){
+                        return [ meta, fastq ]
+                    } else {
+                        error ("Antibody reference was not specified. Please provide a reference file for feature barcoding (e.g. antibody measurements).\nPlease refer to https://www.10xgenomics.com/support/software/cell-ranger/latest/analysis/inputs/cr-feature-ref-csv for more details.")
+                    }
                 beam: meta.feature_type == "beam"
                     return [ meta, fastq ]
                 crispr: meta.feature_type == "crispr"
