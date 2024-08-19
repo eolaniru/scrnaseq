@@ -56,9 +56,10 @@ Cellrangermulit pipeline requires an additional column _feature_type_ to indicat
 
 |_feature_type_ | description      |
 ----------------|-------------     |
-| `gex`         |  gene expression |
-| `vdj`         | TCR/BCR profiling|
-| `ab`          |antibody profiling (feature barcoding) |
+| `gex`         | gene expression  |
+| `vdjb`        | BCR profiling    |
+| `vdjt`        | TCR profiling    |
+| `ab`          | antibody profiling (feature barcoding) |
 | `crispr`      | CRISPR capture   |
 
 
