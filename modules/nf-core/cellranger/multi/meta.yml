@@ -27,10 +27,6 @@ input:
       type: file
       description: FASTQ files for gene expression analysis
       pattern: "*.fastq.gz"
-  - vdj_fastqs:
-      type: file
-      description: FASTQ files for V(D)J immunoprofiling analysis
-      pattern: "*.fastq.gz"
   - vdjb_fastqs:
       type: file
       description: FASTQ files for V(D)J B cells immunoprofiling analysis
