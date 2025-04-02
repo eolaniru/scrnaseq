@@ -1,4 +1,11 @@
-nf_core_version: 2.14.1
+lint:
+  files_exist:
+    - lib/Utils.groovy
+  files_unchanged:
+    - .github/ISSUE_TEMPLATE/bug_report.yml
+  schema_params: false
+  template_strings: false
+nf_core_version: 3.2.0
 repository_type: pipeline
 template:
   author: Bailey PJ, Botvinnik O, Marques de Almeida F, Peltzer A, Sturm G
