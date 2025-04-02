@@ -320,6 +320,7 @@ workflow SCRNASEQ {
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
             name: 'nf_core_'  +  'scrnaseq_software_'  + 'mqc_'  + 'versions.yml',
+            name: 'nf_core_'  +  'scrnaseq_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }
@@ -360,6 +361,9 @@ workflow SCRNASEQ {
         ch_multiqc_files.collect(),
         ch_multiqc_config.toList(),
         ch_multiqc_custom_config.toList(),
+        ch_multiqc_logo.toList(),
+        [],
+        []
         ch_multiqc_logo.toList(),
         [],
         []

@@ -25,6 +25,7 @@ jobs:
         with:
           message: |
             ## This PR is against the `${{github.event.pull_request.base.ref}}` branch :x:
+            ## This PR is against the `${{github.event.pull_request.base.ref}}` branch :x:
 
             * Do not close this PR
             * Click _Edit_ and change the `base` to `dev`

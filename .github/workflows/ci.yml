@@ -37,6 +37,7 @@ jobs:
       matrix:
         NXF_VER:
           - "24.04.2"
+          - "24.04.2"
           - "latest-everything"
         profile: ["simpleaf", "cellranger", "cellrangermulti", "kallisto", "star"]
 

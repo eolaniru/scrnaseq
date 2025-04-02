@@ -1,5 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/nf-core/scrnaseq/master/nextflow_schema.json",
     "title": "nf-core/scrnaseq pipeline parameters",
     "description": "Pipeline for processing 10x Genomics single cell rnaseq data",
@@ -519,6 +520,7 @@
     },
     "allOf": [
         {
+            "$ref": "#/$defs/input_output_options"
             "$ref": "#/$defs/input_output_options"
         },
         {
