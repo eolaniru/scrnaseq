@@ -64,7 +64,8 @@ process CELLRANGER_MULTI {
     include_beam = beam_fastqs.first().getName() != 'fastqs' && beam_control_panel     ? '[antigen-specificity]' : ''
     include_cmo  = cmo_fastqs.first().getName() != 'fastqs' && cmo_barcodes            ? '[samples]'             : ''
     include_fb   = ab_fastqs.first().getName() != 'fastqs' && fb_reference             ? '[feature]'             : ''
-    include_frna = gex_frna_probeset_name && frna_sampleinfo                           ? '[samples]'             : ''    
+    include_frna = gex_frna_probeset_name && frna_sampleinfo                           ? '[samples]'             : '' 
+    any_vdj      = include_vdj || include_vdjb || include_vdjt                         ? '[vdj]'                 : ''    
 
     gex_reference_path = include_gex ? "reference,./${gex_reference_name}" : ''
     fb_reference_path  = include_fb  ? "reference,./${fb_reference_name}"  : ''
