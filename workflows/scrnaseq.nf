@@ -249,6 +249,7 @@ workflow SCRNASEQ {
             // allowing to have multiple samples in the sheet, having all the data-type tuples initialized,
             // either empty or populated. It will be branched inside the subworkflow.
             if (!map_collection_clone.any{ it.feature_type == 'gex' })    { map_collection_clone.add( [id: sample_id, feature_type: 'gex'   , gex:    empty_file, options:[:] ] ) }
+            if (!map_collection_clone.any{ it.feature_type == 'vdj' })    { map_collection_clone.add( [id: sample_id, feature_type: 'vdj'   , vdj:    empty_file, options:[:] ] ) }
             if (!map_collection_clone.any{ it.feature_type == 'vdjb' })   { map_collection_clone.add( [id: sample_id, feature_type: 'vdjb'  , vdjb:   empty_file, options:[:] ] ) }
             if (!map_collection_clone.any{ it.feature_type == 'vdjt' })   { map_collection_clone.add( [id: sample_id, feature_type: 'vdjt'  , vdjt:   empty_file, options:[:] ] ) }
             if (!map_collection_clone.any{ it.feature_type == 'ab' })     { map_collection_clone.add( [id: sample_id, feature_type: 'ab'    , ab:     empty_file, options:[:] ] ) }
@@ -320,7 +321,6 @@ workflow SCRNASEQ {
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
             name: 'nf_core_'  +  'scrnaseq_software_'  + 'mqc_'  + 'versions.yml',
-            name: 'nf_core_'  +  'scrnaseq_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }
@@ -361,9 +361,6 @@ workflow SCRNASEQ {
         ch_multiqc_files.collect(),
         ch_multiqc_config.toList(),
         ch_multiqc_custom_config.toList(),
-        ch_multiqc_logo.toList(),
-        [],
-        []
         ch_multiqc_logo.toList(),
         [],
         []
